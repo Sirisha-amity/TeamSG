@@ -39,3 +39,21 @@ This is a basic, web-based To-Do List application built with plain HTML, CSS, an
 No server or complex setup is required, as this is a front-end only application.
 
 ## Project Structure
+.
+├── index.html    # The main HTML file for the app's structure
+├── style.css     # Contains all the CSS rules for styling
+└── script.js     # Houses the JavaScript logic for interactivity and data management
+
+
+## Future Enhancements (Optional Features)
+
+This app can be expanded with more advanced features, such as:
+
+* **Filter Tasks:** Add options to display "All," "Active," or "Completed" tasks.
+* **Edit Tasks:** Allow users to edit task text by clicking on them.
+* **Drag-and-Drop Reordering:** Enable users to reorder tasks in the list.
+* **Due Dates/Priorities:** Incorporate fields for setting due dates or task priorities.
+* **Accessibility Improvements:** Enhance usability for users with disabilities.
+
+Feel free to explore the code and modify it to suit your needs!
+EOF

@@ -1,46 +1,22 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
+/* ... (previous CSS) ... */
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-main {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-section {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    flex: 1 1 calc(50% - 40px); /* Two columns layout */
-    min-width: 300px; /* Minimum width for sections */
-}
-
-h2 {
-    color: #4CAF50;
-    margin-top: 0;
-}
-
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #333;
-    color: white;
-    position: relative;
-    bottom: 0;
+table {
     width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
 }
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    color: #555;
+}
+
+table tr:nth-child(even){background-color: #f9f9f9;}
+
+table tr:hover {background-color: #ddd;}

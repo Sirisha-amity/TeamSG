@@ -1,59 +1,109 @@
-# TeamSG
-cat << 'EOF' > README.md
-# Simple To-Do List App
+#TeamSG
+# Smart Inventory Tracker
+
+This repository contains the source code for a *Smart Inventory Tracker*, a web-based system designed to help small to medium-sized businesses streamline their supply chain operations. It enables users to manage products, monitor stock levels, track supplier information, and automate reorder alerts.
 
 ---
 
-This is a basic, web-based To-Do List application built with plain HTML, CSS, and JavaScript. It allows users to manage their daily tasks efficiently, offering core functionalities like adding, marking as complete, and deleting tasks. All tasks are saved directly in your browser using `localStorage`, so they persist even after you close and reopen the page.
-
 ## Features
 
-* **Add Tasks:** Quickly add new tasks using an input field and an "Add Task" button (or by pressing Enter).
-* **Mark as Complete:** Toggle a task's completion status with a "Complete" button. Completed tasks are visually distinguished.
-* **Delete Tasks:** Remove individual tasks with a "Delete" button.
-* **Persistent Storage:** Tasks are saved in your browser's `localStorage`, ensuring they remain even after refreshing the page or closing the browser.
-* **Clear Completed Tasks:** A dedicated button to remove all tasks that have been marked as complete.
+* *Product Management*: Add, edit, and remove product entries, tracking quantity, price, and category.
+* *Inventory Tracking*: Get real-time visibility into stock levels with automated low-stock alerts.
+* *Supplier Database*: Manage supplier details and link them to specific products (conceptual linking for now).
+* *Order Management*: A placeholder section for future development of recording and monitoring product orders and deliveries.
+* *Notifications*: Basic automated alerts for low inventory displayed directly on the dashboard.
+* *Data Persistence*: Product and supplier data is saved to local JSON files, so your information remains even after the server restarts.
 
-## Tech Stack
+---
 
-* **HTML5:** Provides the foundational structure and content of the web page.
-* **CSS3:** Styles the application, making it visually appealing and user-friendly.
-* **JavaScript (ES6+):** Handles all the interactive logic, including DOM manipulation, event handling, and `localStorage` management.
+## Technologies Used
 
-## How to Use
+* *Frontend*: HTML, CSS, JavaScript
+* *Backend*: Node.js with Express.js
+* *Database*: File-based JSON storage (for demonstration purposes; a production application would typically use a dedicated database like MySQL or MongoDB)
 
-1.  **Clone the Repository (or download the files):**
-    ```bash
-    git clone <repository-url>
-    ```
-    (Replace `<repository-url>` with the actual URL of your repository.)
+---
 
-2.  **Navigate to the Project Directory:**
-    ```bash
-    cd simple-todo-app
-    ```
-    (Replace `simple-todo-app` with the name of the folder if you downloaded it.)
+## Getting Started
 
-3.  **Open `index.html`:** Simply open the `index.html` file in your preferred web browser.
+Follow these simple steps to set up and run the project on your local machine.
 
-No server or complex setup is required, as this is a front-end only application.
+### Prerequisites
+
+You'll need the following installed:
+
+* *Node.js*: [Download & Install Node.js](https://nodejs.org/en/download/) (includes npm)
+
+### Installation
+
+1.  *Clone the repository*:
+    bash
+    git clone <repository_url>
+    cd smart-inventory-tracker
+    
+    (Replace <repository_url> with the actual URL of your Git repository.)
+2.  *Install Node.js dependencies*:
+    bash
+    npm install
+    
+
+### Running the Application
+
+1.  *Start the Node.js server*:
+    bash
+    node server.js
+    
+    You should see a confirmation message in your terminal, typically indicating the server is running on http://localhost:3000.
+2.  *Open in your browser*:
+    Navigate to http://localhost:3000 in your web browser to access the application.
+
+---
 
 ## Project Structure
-.
-├── index.html    # The main HTML file for the app's structure
-├── style.css     # Contains all the CSS rules for styling
-└── script.js     # Houses the JavaScript logic for interactivity and data management
 
+* index.html: The core HTML file for the frontend user interface.
+* style.css: Contains all the styling for the web application.
+* script.js: Frontend JavaScript, handling API interactions and dynamic UI updates.
+* server.js: The Node.js backend server, managing API requests and serving static files.
+* products.json: (Generated automatically) Stores your product data.
+* suppliers.json: (Generated automatically) Stores your supplier data.
+* package.json: Defines project metadata and dependencies.
+* package-lock.json: Records the exact versions of installed dependencies.
 
-## Future Enhancements (Optional Features)
+---
 
-This app can be expanded with more advanced features, such as:
+## API Endpoints
 
-* **Filter Tasks:** Add options to display "All," "Active," or "Completed" tasks.
-* **Edit Tasks:** Allow users to edit task text by clicking on them.
-* **Drag-and-Drop Reordering:** Enable users to reorder tasks in the list.
-* **Due Dates/Priorities:** Incorporate fields for setting due dates or task priorities.
-* **Accessibility Improvements:** Enhance usability for users with disabilities.
+The backend provides the following RESTful API endpoints:
 
-Feel free to explore the code and modify it to suit your needs!
-EOF
+### Products
+
+* GET /api/products: Retrieve all product entries.
+* POST /api/products: Add a new product.
+    * *Body*: { "name": "string", "quantity": "number", "price": "number", "category": "string" }
+* PUT /api/products/:id: Update an existing product by its ID.
+    * *Body*: { "name": "string", "quantity": "number", "price": "number", "category": "string" } (supports partial updates)
+* DELETE /api/products/:id: Delete a product by its ID.
+
+### Suppliers
+
+* GET /api/suppliers: Retrieve all supplier entries.
+* POST /api/suppliers: Add a new supplier.
+    * *Body*: { "name": "string", "contactPerson": "string", "phone": "string", "email": "string" }
+* DELETE /api/suppliers/:id: Delete a supplier by its ID.
+
+---
+
+## Future Enhancements
+
+This project serves as a solid foundation. Here are some key areas for improvement to evolve it into a robust, production-ready system:
+
+* *Dedicated Database Integration*: Transition from file-based JSON storage to a powerful database (like MySQL, PostgreSQL, or MongoDB) for enhanced scalability, data integrity, and complex querying.
+* *Comprehensive Order Management*: Develop full CRUD (Create, Read, Update, Delete) operations for orders, including seamless linking to products and suppliers, dynamic order status updates, and tracking capabilities.
+* *User Authentication & Roles*: Implement a secure system for user registration, login, and role-based access control (e.g., administrator, inventory manager) to manage permissions effectively.
+* *Advanced Notification System*: Integrate with email services to send automated low-stock alerts, order confirmations, and other critical business notifications.
+* *Enhanced UI/UX*: Consider migrating to a modern frontend framework (such as React, Vue.js, or Angular) to build a more interactive, responsive, and scalable user interface.
+* *Search, Filtering, and Sorting*: Add advanced functionality to easily search, filter, and sort products, suppliers, and orders, improving data accessibility.
+* *Reporting and Analytics*: Develop intuitive dashboards and generate detailed reports to visualize inventory trends, track key performance indicators, and gain actionable insights.
+* *Robust Error Handling and Validation*: Implement more comprehensive server-side and client-side input validation, along with robust error handling mechanisms, to ensure data integrity and application stability.
+*

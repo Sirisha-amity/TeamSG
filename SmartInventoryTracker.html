@@ -12,33 +12,16 @@
   </header>
 
   <main>
-    <!-- Product Management -->
     <section id="product-management">
       <h2>Product Management</h2>
-      <p>Add, edit, remove products.</p>
+      <p>Add, edit, and remove products.</p>
 
       <h3>Add New Product</h3>
       <form id="add-product-form">
-        <div class="form-group">
-          <label for="productName">Name:</label>
-          <input type="text" id="productName" required />
-        </div>
-
-        <div class="form-group">
-          <label for="productQuantity">Quantity:</label>
-          <input type="number" id="productQuantity" min="0" required />
-        </div>
-
-        <div class="form-group">
-          <label for="productPrice">Price:</label>
-          <input type="number" id="productPrice" step="0.01" min="0" required />
-        </div>
-
-        <div class="form-group">
-          <label for="productCategory">Category:</label>
-          <input type="text" id="productCategory" required />
-        </div>
-
+        <label>Name: <input type="text" id="productName" required /></label>
+        <label>Quantity: <input type="number" id="productQuantity" min="0" required /></label>
+        <label>Price: <input type="number" id="productPrice" step="0.01" min="0" required /></label>
+        <label>Category: <input type="text" id="productCategory" required /></label>
         <button type="submit">Add Product</button>
       </form>
 
@@ -50,44 +33,23 @@
             <th>Quantity</th>
             <th>Price</th>
             <th>Category</th>
+            <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Laptop Pro</td>
-            <td>15</td>
-            <td>$1200.00</td>
-            <td>Electronics</td>
-          </tr>
-          <tr>
-            <td>Mechanical Keyboard</td>
-            <td>50</td>
-            <td>$95.00</td>
-            <td>Peripherals</td>
-          </tr>
-          <tr>
-            <td>Ergonomic Mouse</td>
-            <td>30</td>
-            <td>$45.00</td>
-            <td>Peripherals</td>
-          </tr>
-        </tbody>
+        <tbody id="product-table-body"></tbody>
       </table>
     </section>
 
-    <!-- Inventory Tracking -->
     <section id="inventory-tracking">
       <h2>Inventory Tracking</h2>
       <p>View stock levels and alerts.</p>
     </section>
 
-    <!-- Supplier Database -->
     <section id="supplier-database">
       <h2>Supplier Database</h2>
       <p>Manage supplier details.</p>
     </section>
 
-    <!-- Order Management -->
     <section id="order-management">
       <h2>Order Management</h2>
       <p>Track orders and deliveries.</p>
